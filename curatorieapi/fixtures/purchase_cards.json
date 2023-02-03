@@ -1,0 +1,30 @@
+[
+    {
+        "model": "curatorieapi.purchaseCard",
+        "pk": 1,
+        "fields": {
+            "board_id": 4,
+            "user_id": 1,
+            "link": "https://www.pinterest.com/pin/501095896043589801/",
+            "image_url": "https://i.pinimg.com/736x/e9/88/25/e98825839064e31f42b149e7fa520e92.jpg",
+            "item": "duck5",
+            "description": "the fifth duckement",
+            "price": 1000.00,
+            "priority": true
+        }
+    },
+    {
+        "model": "curatorieapi.purchaseCard",
+        "pk": 2,
+        "fields": {
+            "board_id": 4,
+            "user_id": 1,
+            "link": "https://www.trendhunter.com/trends/floating-design-fun-art",
+            "image_url": "https://cdn.trendhunterstatic.com/thumbs/floating-design-fun-art.jpeg?auto=webp",
+            "item": "duck6",
+            "description": "the sixth duck",
+            "price": 500.00,
+            "priority": false
+        }
+    }
+]

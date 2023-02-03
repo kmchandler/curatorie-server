@@ -1,0 +1,32 @@
+[
+    {
+        "model": "curatorieapi.listCard",
+        "pk": 1,
+        "fields": {
+            "board_id": 3,
+            "user_id": 1,
+            "list_item": "get duck",
+            "priority": false
+        }
+    },
+    {
+        "model": "curatorieapi.listCard",
+        "pk": 2,
+        "fields": {
+            "board_id": 3,
+            "user_id": 1,
+            "list_item": "show off duck",
+            "priority": false
+        }
+    },
+    {
+        "model": "curatorieapi.listCard",
+        "pk": 3,
+        "fields": {
+            "board_id": 3,
+            "user_id": 1,
+            "list_item": "prosper",
+            "priority": true
+        }
+    }
+]

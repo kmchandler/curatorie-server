@@ -2,6 +2,8 @@ from django.db import models
 
 class GiftCard(models.Model):
 
+    board_id = models.IntegerField()
+    user_id = models.IntegerField()
     link = models.CharField(max_length=100)
     image_url = models.CharField(max_length=100)
     item = models.CharField(max_length=100)

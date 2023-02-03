@@ -2,8 +2,8 @@ from django.db import models
 
 class PurchaseCard(models.Model):
 
-    board_id = models.IntegerField(max_length=100)
-    user_id = models.IntegerField(max_length=100)
+    board_id = models.IntegerField()
+    user_id = models.IntegerField()
     link = models.CharField(max_length=100)
     image_url = models.CharField(max_length=100)
     item = models.CharField(max_length=100)

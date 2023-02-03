@@ -1,0 +1,36 @@
+[
+    {
+        "model": "curatorieapi.board",
+        "pk": 1,
+        "fields": {
+            "board_id": 1,
+            "user_id": 1,
+            "link": "https://tenor.com/view/dancing-random-duck-gif-25973520",
+            "image_url": "https://media.tenor.com/RtJifRTjOHEAAAAM/dancing-random.gif",
+            "item": "duck1",
+            "description": "the first duck",
+            "price": 100.00,
+            "occasion": "christmas",
+            "gift_for": "me",
+            "name": "ryann",
+            "priority": true
+        }
+    },
+    {
+        "model": "curatorieapi.board",
+        "pk": 2,
+        "fields": {
+            "board_id": 1,
+            "user_id": 1,
+            "link": "https://app.refinable.com/item/polygon/0x3655e2fc9f440c3e233a795b86d39253cf2efdea/249",
+            "image_url": "https://nft-cdn.refinable.com/nap/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1jZDhLVWVYRHZKN3Nja0FtWXo3OHZteFA3SkZkUG54TDhIRGE0TGpCMWZwUi8yNDkucG5n?signature=f202cedd89a238e19a9c431876d547a48bfa2e23c1ad2cc5678efec496efc053",
+            "item": "duck2",
+            "description": "the second duck",
+            "price": 50.00,
+            "occasion": "christmas",
+            "gift_for": "someone else",
+            "name": "ryann",
+            "priority": false
+        }
+    }
+]

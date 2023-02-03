@@ -1,0 +1,28 @@
+[
+    {
+        "model": "curatorieapi.board",
+        "pk": 1,
+        "fields": {
+            "uid": "Rg8s3QDYR8Snk1mqcMWhtCOerPI2",
+            "first_name": "Kristen",
+            "last_name": "Chandler",
+            "username": "kmchandler",
+            "image_url": "https://avatars.githubusercontent.com/u/99220964?v=4",
+            "email": "krismchandler@gmail.com",
+            "color_scheme": "lavender haze"
+        }
+    },
+    {
+        "model": "curatorieapi.board",
+        "pk": 2,
+        "fields": {
+            "uid": "123456789",
+            "first_name": "Kess",
+            "last_name": "Chandler",
+            "username": "schshmeagz",
+            "image_url": "https://images.newscientist.com/wp-content/uploads/2020/08/19163900/credit_irina-dmitrienko-_-alamy.jpg?crop=16:9,smart&width=1200&height=675&upscale=true",
+            "email": "sits@kmail.dab",
+            "color_scheme": "anti-hero"
+        }
+    }
+]

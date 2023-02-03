@@ -1,6 +1,6 @@
 [
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.user",
         "pk": 1,
         "fields": {
             "uid": "Rg8s3QDYR8Snk1mqcMWhtCOerPI2",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.user",
         "pk": 2,
         "fields": {
             "uid": "123456789",

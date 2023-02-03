@@ -1,6 +1,6 @@
 [
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.sharedBoard",
         "pk": 1,
         "fields": {
             "user": 2,
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.sharedBoard",
         "pk": 2,
         "fields": {
             "user": 2,

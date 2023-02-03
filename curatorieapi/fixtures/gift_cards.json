@@ -1,6 +1,6 @@
 [
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.giftCard",
         "pk": 1,
         "fields": {
             "board_id": 1,
@@ -17,7 +17,7 @@
         }
     },
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.giftCard",
         "pk": 2,
         "fields": {
             "board_id": 1,

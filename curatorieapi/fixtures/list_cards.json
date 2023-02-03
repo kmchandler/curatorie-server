@@ -1,6 +1,6 @@
 [
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.listCard",
         "pk": 1,
         "fields": {
             "board_id": 3,
@@ -10,7 +10,7 @@
         }
     },
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.listCard",
         "pk": 2,
         "fields": {
             "board_id": 3,
@@ -20,7 +20,7 @@
         }
     },
     {
-        "model": "curatorieapi.board",
+        "model": "curatorieapi.listCard",
         "pk": 3,
         "fields": {
             "board_id": 3,

@@ -3,8 +3,8 @@
         "model": "curatorieapi.inspoCard",
         "pk": 1,
         "fields": {
-            "board_id": 2,
-            "user_id": 1,
+            "board": 2,
+            "user": 1,
             "image_url": "https://img-9gag-fun.9cache.com/photo/aK6Vn96_460s.jpg",
             "description": "the third duck",
             "priority": true
@@ -14,8 +14,8 @@
         "model": "curatorieapi.inspoCard",
         "pk": 2,
         "fields": {
-            "board_id": 2,
-            "user_id": 1,
+            "board": 2,
+            "user": 1,
             "image_url": "https://pbs.twimg.com/profile_images/1030565536248344577/tuFeM906_400x400.jpg",
             "description": "the fourth duck",
             "priority": false

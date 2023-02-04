@@ -3,7 +3,7 @@
         "model": "curatorieapi.board",
         "pk": 1,
         "fields": {
-            "user_id": 1,
+            "user": 1,
             "type": "gift",
             "name": "christmas presents",
             "icon": "present"
@@ -13,7 +13,7 @@
         "model": "curatorieapi.board",
         "pk": 2,
         "fields": {
-            "user_id": 1,
+            "user": 1,
             "type": "inspo",
             "name": "my style",
             "icon": "sungalsses"
@@ -23,7 +23,7 @@
         "model": "curatorieapi.board",
         "pk": 3,
         "fields": {
-            "user_id": 1,
+            "user": 1,
             "type": "list",
             "name": "my to dos",
             "icon": "list"
@@ -33,6 +33,7 @@
         "model": "curatorieapi.board",
         "pk": 4,
         "fields": {
+            "user": 1,
             "type": "purchase",
             "name": "wish list",
             "icon": "genie"

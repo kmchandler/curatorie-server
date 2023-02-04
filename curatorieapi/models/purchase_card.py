@@ -1,9 +1,11 @@
 from django.db import models
+from .user import User
+from .board import Board
 
 class PurchaseCard(models.Model):
 
-    board_id = models.IntegerField()
-    user_id = models.IntegerField()
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     link = models.CharField(max_length=100)
     image_url = models.CharField(max_length=100)
     item = models.CharField(max_length=100)

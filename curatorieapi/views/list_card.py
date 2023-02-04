@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import ListCard
+from curatorieapi.models import ListCard, User, Board
 
 class ListCardView(ViewSet):
     def retrieve(self, request, pk):
@@ -26,10 +26,14 @@ class ListCardView(ViewSet):
         Returns
             Response -- JSON serialized list card instance
         """
+
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         list_card = ListCard.objects.create(
-            id=request.data["id"],
-            board=request.data["board"],
-            user=request.data["user"],
+            board=board,
+            user=user,
             list_item=request.data["list_item"],
             priority=request.data["priority"]
         )
@@ -42,11 +46,14 @@ class ListCardView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
 
         list_card = ListCard.objects.get(pk=pk)
-        list_card.board = request.data["board"],
-        list_card.user = request.data["user"],
-        list_card.list_item = request.data["list_item"],
+        list_card.board = board
+        list_card.user = user
+        list_card.list_item = request.data["list_item"]
         list_card.priority = request.data["priority"]
 
         list_card.save()
@@ -63,4 +70,4 @@ class ListCardSerializer(serializers.ModelSerializer):
     """"JSON serializer for list cards"""
     class Meta:
         model = ListCard
-        fields = ('id', 'board', 'user', 'list_iem', 'priority')
+        fields = ('id', 'board', 'user', 'list_item', 'priority')

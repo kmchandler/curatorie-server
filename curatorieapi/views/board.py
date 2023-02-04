@@ -32,7 +32,7 @@ class BoardView(ViewSet):
         """
         board = Board.objects.create(
             id=request.data["id"],
-            user_id=request.data["user_id"],
+            user=request.data["user"],
             type=request.data["type"],
             name=request.data["name"],
             icon=request.data["icon"]
@@ -48,7 +48,7 @@ class BoardView(ViewSet):
         """
 
         board = Board.objects.get(pk=pk)
-        board.user_id = request.data["user_id"],
+        board.user = request.data["user"],
         board.type = request.data["type"],
         board.name = request.data["name"],
         board.icon = request.data["icon"]
@@ -67,4 +67,4 @@ class BoardSerializer(serializers.ModelSerializer):
     """"JSON serializer for boards"""
     class Meta:
         model = Board
-        fields = ('id', 'user_id', 'type', 'name', 'icon')
+        fields = ('id', 'user', 'type', 'name', 'icon')

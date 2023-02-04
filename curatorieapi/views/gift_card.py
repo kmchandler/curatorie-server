@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import GiftCard
+from curatorieapi.models import GiftCard, User, Board
 
 class GiftCardView(ViewSet):
     def retrieve(self, request, pk):
@@ -26,10 +26,13 @@ class GiftCardView(ViewSet):
         Returns
             Response -- JSON serialized gift card instance
         """
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         gift_card = GiftCard.objects.create(
-            id=request.data["id"],
-            board=request.data["board"],
-            user=request.data["user"],
+            board=board,
+            user=user,
             link=request.data["link"],
             image_url=request.data["image_url"],
             item=request.data["item"],
@@ -49,18 +52,21 @@ class GiftCardView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
 
         gift_card = GiftCard.objects.get(pk=pk)
-        gift_card.board = request.data["board"],
-        gift_card.user = request.data["user"],
-        gift_card.link = request.data["link"],
-        gift_card.image_url = request.data["image_url"],
-        gift_card.item = request.data["item"],
-        gift_card.description = request.data["description"],
-        gift_card.price = request.data["price"],
-        gift_card.occasion = request.data["occasion"],
-        gift_card.gift_for = request.data["gift_for"],
-        gift_card.name = request.data["name"],
+        gift_card.board = board
+        gift_card.user = user
+        gift_card.link = request.data["link"]
+        gift_card.image_url = request.data["image_url"]
+        gift_card.item = request.data["item"]
+        gift_card.description = request.data["description"]
+        gift_card.price = request.data["price"]
+        gift_card.occasion = request.data["occasion"]
+        gift_card.gift_for = request.data["gift_for"]
+        gift_card.name = request.data["name"]
         gift_card.priority = request.data["priority"]
 
         gift_card.save()

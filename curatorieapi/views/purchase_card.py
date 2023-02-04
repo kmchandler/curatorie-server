@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import PurchaseCard
+from curatorieapi.models import PurchaseCard, User, Board
 
 class PurchaseCardView(ViewSet):
     def retrieve(self, request, pk):
@@ -26,10 +26,14 @@ class PurchaseCardView(ViewSet):
         Returns
             Response -- JSON serialized purchase card instance
         """
+
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         purchase_card = PurchaseCard.objects.create(
-            id=request.data["id"],
-            board=request.data["board"],
-            user=request.data["user"],
+            board=board,
+            user=user,
             link=request.data["link"],
             image_url=request.data["image_url"],
             item=request.data["item"],
@@ -47,14 +51,18 @@ class PurchaseCardView(ViewSet):
             Response -- Empty body with 204 status code
         """
 
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         purchase_card = PurchaseCard.objects.get(pk=pk)
-        purchase_card.board = request.data["board"],
-        purchase_card.user = request.data["user"],
-        purchase_card.link = request.data["link"],
-        purchase_card.image_url = request.data["image_url"],
-        purchase_card.item = request.data["item"],
-        purchase_card.description = request.data["description"],
-        purchase_card.price = request.data["price"],
+        purchase_card.board = board
+        purchase_card.user = user
+        purchase_card.link = request.data["link"]
+        purchase_card.image_url = request.data["image_url"]
+        purchase_card.item = request.data["item"]
+        purchase_card.description = request.data["description"]
+        purchase_card.price = request.data["price"]
         purchase_card.priority = request.data["priority"]
 
         purchase_card.save()

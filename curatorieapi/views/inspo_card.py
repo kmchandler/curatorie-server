@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import InspoCard
+from curatorieapi.models import InspoCard, User, Board
 
 class InspoCardView(ViewSet):
     def retrieve(self, request, pk):
@@ -26,10 +26,14 @@ class InspoCardView(ViewSet):
         Returns
             Response -- JSON serialized inspo card instance
         """
+
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         inspo_card = InspoCard.objects.create(
-            id=request.data["id"],
-            board=request.data["board"],
-            user=request.data["user"],
+            board=board,
+            user=user,
             image_url=request.data["image_url"],
             description=request.data["description"],
             priority=request.data["priority"]
@@ -44,11 +48,15 @@ class InspoCardView(ViewSet):
             Response -- Empty body with 204 status code
         """
 
+        user = User.objects.get(id=request.data["user_id"])
+
+        board = Board.objects.get(id=request.data["board_id"])
+
         inspo_card = InspoCard.objects.get(pk=pk)
-        inspo_card.board = request.data["board"],
-        inspo_card.user = request.data["user"],
-        inspo_card.image_url = request.data["image_url"],
-        inspo_card.description = request.data["description"],
+        inspo_card.board = board
+        inspo_card.user = user
+        inspo_card.image_url = request.data["image_url"]
+        inspo_card.description = request.data["description"]
         inspo_card.priority = request.data["priority"]
 
         inspo_card.save()

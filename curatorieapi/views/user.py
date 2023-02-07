@@ -38,7 +38,6 @@ class UserView(ViewSet):
             username=request.data["username"],
             image_url=request.data["image_url"],
             email=request.data["email"],
-            color_scheme=request.data["color_scheme"],
         )
         serializer = UserSerializer(user)
         return Response(serializer.data)
@@ -57,7 +56,6 @@ class UserView(ViewSet):
         user.username = request.data["username"]
         user.image_url = request.data["image_url"]
         user.email = request.data["email"]
-        user.color_scheme = request.data["color_scheme"]
 
         user.save()
 
@@ -73,4 +71,4 @@ class UserSerializer(serializers.ModelSerializer):
     """"JSON serializer for users"""
     class Meta:
         model = User
-        fields = ('id', 'uid', 'first_name', 'last_name', 'username', 'image_url', 'email', 'color_scheme')
+        fields = ('id', 'uid', 'first_name', 'last_name', 'username', 'image_url', 'email')

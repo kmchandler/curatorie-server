@@ -3,12 +3,12 @@
         "model": "curatorieapi.user",
         "pk": 1,
         "fields": {
-            "uid": "Rg8s3QDYR8Snk1mqcMWhtCOerPI2",
-            "first_name": "Kristen",
+            "uid": "123456768",
+            "first_name": "Elanor",
             "last_name": "Chandler",
-            "username": "kmchandler",
+            "username": "beandean",
             "image_url": "https://avatars.githubusercontent.com/u/99220964?v=4",
-            "email": "krismchandler@gmail.com",
+            "email": "dean@bean-u.edu",
             "color_scheme": "lavender haze"
         }
     },

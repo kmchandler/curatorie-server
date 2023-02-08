@@ -1,0 +1,30 @@
+[
+    {
+        "model": "curatorieapi.boardType",
+        "pk": 1,
+        "fields": {
+            "type": "gift_card"
+        }
+    },
+    {
+        "model": "curatorieapi.boardType",
+        "pk": 2,
+        "fields": {
+            "type": "inspo_card"
+        }
+    },
+    {
+        "model": "curatorieapi.boardType",
+        "pk": 3,
+        "fields": {
+            "type": "list_card"
+        }
+    },
+    {
+        "model": "curatorieapi.boardType",
+        "pk": 4,
+        "fields": {
+            "type": "purchase_card"
+        }
+    }
+]

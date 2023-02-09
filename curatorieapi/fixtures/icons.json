@@ -3,140 +3,140 @@
         "model": "curatorieapi.icon",
         "pk": 1,
         "fields": {
-            "type": "autumn"
+            "name": "autumn"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 2,
         "fields": {
-            "type": "barbell"
+            "name": "barbell"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 3,
         "fields": {
-            "type": "bear"
+            "name": "bear"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 4,
         "fields": {
-            "type": "bike"
+            "name": "bike"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 5,
         "fields": {
-            "type": "books"
+            "name": "books"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 6,
         "fields": {
-            "type": "cat"
+            "name": "cat"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 7,
         "fields": {
-            "type": "checklist"
+            "name": "checklist"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 8,
         "fields": {
-            "type": "dog"
+            "name": "dog"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 9,
         "fields": {
-            "type": "flowers"
+            "name": "flowers"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 10,
         "fields": {
-            "type": "heart"
+            "name": "heart"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 11,
         "fields": {
-            "type": "house"
+            "name": "house"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 12,
         "fields": {
-            "type": "makeup"
+            "name": "makeup"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 13,
         "fields": {
-            "type": "pacifier"
+            "name": "pacifier"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 14,
         "fields": {
-            "type": "people"
+            "name": "people"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 15,
         "fields": {
-            "type": "person"
+            "name": "person"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 16,
         "fields": {
-            "type": "pizza"
+            "name": "pizza"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 17,
         "fields": {
-            "type": "present"
+            "name": "present"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 17,
         "fields": {
-            "type": "snowflake"
+            "name": "snowflake"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 19,
         "fields": {
-            "type": "sun"
+            "name": "sun"
         }
     },
     {
         "model": "curatorieapi.icon",
         "pk": 20,
         "fields": {
-            "type": "tree"
+            "name": "tree"
         }
     }
 ]

@@ -12,3 +12,4 @@ python3 manage.py loaddata inspo_cards
 python3 manage.py loaddata list_cards
 python3 manage.py loaddata purchase_cards
 python3 manage.py loaddata shared_boards
+python3 manage.py loaddata icons

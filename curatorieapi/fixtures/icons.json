@@ -1,0 +1,142 @@
+[
+    {
+        "model": "curatorieapi.icon",
+        "pk": 1,
+        "fields": {
+            "type": "autumn"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 2,
+        "fields": {
+            "type": "barbell"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 3,
+        "fields": {
+            "type": "bear"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 4,
+        "fields": {
+            "type": "bike"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 5,
+        "fields": {
+            "type": "books"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 6,
+        "fields": {
+            "type": "cat"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 7,
+        "fields": {
+            "type": "checklist"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 8,
+        "fields": {
+            "type": "dog"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 9,
+        "fields": {
+            "type": "flowers"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 10,
+        "fields": {
+            "type": "heart"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 11,
+        "fields": {
+            "type": "house"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 12,
+        "fields": {
+            "type": "makeup"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 13,
+        "fields": {
+            "type": "pacifier"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 14,
+        "fields": {
+            "type": "people"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 15,
+        "fields": {
+            "type": "person"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 16,
+        "fields": {
+            "type": "pizza"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 17,
+        "fields": {
+            "type": "present"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 17,
+        "fields": {
+            "type": "snowflake"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 19,
+        "fields": {
+            "type": "sun"
+        }
+    },
+    {
+        "model": "curatorieapi.icon",
+        "pk": 20,
+        "fields": {
+            "type": "tree"
+        }
+    }
+]

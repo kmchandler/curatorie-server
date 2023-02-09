@@ -18,10 +18,6 @@ class BoardView(ViewSet):
         """"Handle GET requests for all boards"""
         boards = Board.objects.all()
 
-        # user_board = request.query_params.get('user_id', None)
-        # if user_board is not None:
-        #     users = users.filter(board_id=user_board)
-
         serializer = BoardSerializer(boards, many=True)
         return Response(serializer.data)
 
@@ -34,7 +30,6 @@ class BoardView(ViewSet):
 
         board = Board.objects.create(
             user=user,
-            type=request.data["type"],
             name=request.data["name"],
             icon=request.data["icon"]
         )
@@ -52,7 +47,6 @@ class BoardView(ViewSet):
 
         board = Board.objects.get(pk=pk)
         board.user = user
-        board.type = request.data["type"]
         board.name = request.data["name"]
         board.icon = request.data["icon"]
 
@@ -70,4 +64,4 @@ class BoardSerializer(serializers.ModelSerializer):
     """"JSON serializer for boards"""
     class Meta:
         model = Board
-        fields = ('id', 'user', 'type', 'name', 'icon')
+        fields = ('id', 'user', 'name', 'icon')

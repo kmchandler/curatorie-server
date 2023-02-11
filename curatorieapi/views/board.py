@@ -13,7 +13,7 @@ class BoardView(ViewSet):
             return Response(serializer.data)
         except Board.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
- 
+
     def list(self, request):
         """"Handle GET requests for all boards"""
         boards = Board.objects.all()
@@ -26,6 +26,7 @@ class BoardView(ViewSet):
         Returns
             Response -- JSON serialized board instance
         """
+        
         user = User.objects.get(id=request.data["user_id"])
 
         board = Board.objects.create(

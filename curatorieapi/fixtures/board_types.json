@@ -3,6 +3,7 @@
         "model": "curatorieapi.boardType",
         "pk": 1,
         "fields": {
+            "board_id": 1,
             "type": "gift card"
         }
     },
@@ -10,6 +11,7 @@
         "model": "curatorieapi.boardType",
         "pk": 2,
         "fields": {
+            "board_id": 2,
             "type": "inspo card"
         }
     },
@@ -17,6 +19,7 @@
         "model": "curatorieapi.boardType",
         "pk": 3,
         "fields": {
+            "board_id": 3,
             "type": "list card"
         }
     },
@@ -24,6 +27,7 @@
         "model": "curatorieapi.boardType",
         "pk": 4,
         "fields": {
+            "board_id": 4,
             "type": "purchase card"
         }
     }

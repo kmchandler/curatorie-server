@@ -4,7 +4,6 @@
         "pk": 1,
         "fields": {
             "user": 1,
-            "type": "gift",
             "name": "christmas presents",
             "icon": "present"
         }
@@ -14,7 +13,6 @@
         "pk": 2,
         "fields": {
             "user": 1,
-            "type": "inspo",
             "name": "my style",
             "icon": "sungalsses"
         }
@@ -24,7 +22,6 @@
         "pk": 3,
         "fields": {
             "user": 1,
-            "type": "list",
             "name": "my to dos",
             "icon": "list"
         }
@@ -34,7 +31,6 @@
         "pk": 4,
         "fields": {
             "user": 1,
-            "type": "purchase",
             "name": "wish list",
             "icon": "genie"
         }

@@ -7,3 +7,4 @@ from .list_card import ListCardView
 from .purchase_card import PurchaseCardView
 from .shared_board import SharedBoardView
 from .board_type import BoardTypeView
+from .icon import IconView

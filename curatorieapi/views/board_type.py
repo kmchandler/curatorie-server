@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import BoardType
+from curatorieapi.models import BoardType, Board
 
 class BoardTypeView(ViewSet):
     def retrieve(self, request, pk):
@@ -26,8 +26,10 @@ class BoardTypeView(ViewSet):
         Returns
             Response -- JSON serialized board type instance
         """
+        board = Board.objects.get(id=request.data["board_id"])
 
         board_type = BoardType.objects.create(
+            board=board,
             type=request.data["type"]
         )
         serializer = BoardTypeSerializer(board_type)
@@ -39,8 +41,10 @@ class BoardTypeView(ViewSet):
         Returns:
             Response -- Empty body with 204 status code
         """
-
+        
+        board = Board.objects.get(id=request.data["board_id"])
         board_type = BoardType.objects.get(pk=pk)
+        board_type.board = board,
         board_type.type = request.data["type"]
 
         board_type.save()
@@ -57,4 +61,4 @@ class BoardTypeSerializer(serializers.ModelSerializer):
     """"JSON serializer for board types"""
     class Meta:
         model = BoardType
-        fields = ('id', 'type')
+        fields = ('id', 'board', 'type')

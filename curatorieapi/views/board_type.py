@@ -18,6 +18,10 @@ class BoardTypeView(ViewSet):
         """"Handle GET requests for all list board types"""
         board_types = BoardType.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            board_types = board_types.filter(board=board_id)
+
         serializer = BoardTypeSerializer(board_types, many=True)
         return Response(serializer.data)
 

@@ -18,6 +18,10 @@ class PurchaseCardView(ViewSet):
         """"Handle GET requests for all purchase cards"""
         purchase_cards = PurchaseCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            purchase_cards = purchase_cards.filter(board=board_id)
+
         serializer = PurchaseCardSerializer(purchase_cards, many=True)
         return Response(serializer.data)
 

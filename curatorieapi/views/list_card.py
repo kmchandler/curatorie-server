@@ -18,6 +18,10 @@ class ListCardView(ViewSet):
         """"Handle GET requests for all list cards"""
         list_cards = ListCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            list_cards = list_cards.filter(board=board_id)
+
         serializer = ListCardSerializer(list_cards, many=True)
         return Response(serializer.data)
 

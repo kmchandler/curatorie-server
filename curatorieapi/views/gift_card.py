@@ -18,6 +18,10 @@ class GiftCardView(ViewSet):
         """"Handle GET requests for all gift cards"""
         gift_cards = GiftCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            gift_cards = gift_cards.filter(board=board_id)
+
         serializer = GiftCardSerializer(gift_cards, many=True)
         return Response(serializer.data)
 

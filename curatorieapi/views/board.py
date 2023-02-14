@@ -18,6 +18,10 @@ class BoardView(ViewSet):
         """"Handle GET requests for all boards"""
         boards = Board.objects.all()
 
+        user_id = request.query_params.get('user_id', None)
+        if user_id is not None:
+            boards = boards.filter(user_id=user_id)
+
         serializer = BoardSerializer(boards, many=True)
         return Response(serializer.data)
 
@@ -26,8 +30,10 @@ class BoardView(ViewSet):
         Returns
             Response -- JSON serialized board instance
         """
-        
-        user = User.objects.get(id=request.data["user_id"])
+        try:
+            user = User.objects.get(id=request.data["user_id"])
+        except Exception:
+            import pdb; pdb.set_trace()
 
         board = Board.objects.create(
             user=user,
@@ -65,4 +71,4 @@ class BoardSerializer(serializers.ModelSerializer):
     """"JSON serializer for boards"""
     class Meta:
         model = Board
-        fields = ('id', 'user', 'name', 'icon')
+        fields = ('id', 'user_id', 'name', 'icon')

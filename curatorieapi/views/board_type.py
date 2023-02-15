@@ -20,7 +20,7 @@ class BoardTypeView(ViewSet):
 
         board_id = request.query_params.get('board_id', None)
         if board_id is not None:
-            board_types = board_types.filter(board=board_id)
+            board_types = board_types.filter(board_id=board_id)
 
         serializer = BoardTypeSerializer(board_types, many=True)
         return Response(serializer.data)

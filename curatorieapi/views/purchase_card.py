@@ -20,7 +20,7 @@ class PurchaseCardView(ViewSet):
 
         board_id = request.query_params.get('board_id', None)
         if board_id is not None:
-            purchase_cards = purchase_cards.filter(board=board_id)
+            purchase_cards = purchase_cards.filter(board_id=board_id)
 
         serializer = PurchaseCardSerializer(purchase_cards, many=True)
         return Response(serializer.data)
@@ -43,7 +43,7 @@ class PurchaseCardView(ViewSet):
             item=request.data["item"],
             description=request.data["description"],
             price=request.data["price"],
-            priority=request.data["priority"]
+            priority=request.data.get("priority", False)
         )
         serializer = PurchaseCardSerializer(purchase_card)
         return Response(serializer.data)

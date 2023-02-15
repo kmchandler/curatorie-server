@@ -18,6 +18,10 @@ class GiftCardView(ViewSet):
         """"Handle GET requests for all gift cards"""
         gift_cards = GiftCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            gift_cards = gift_cards.filter(board_id=board_id)
+
         serializer = GiftCardSerializer(gift_cards, many=True)
         return Response(serializer.data)
 
@@ -29,7 +33,6 @@ class GiftCardView(ViewSet):
         user = User.objects.get(id=request.data["user_id"])
 
         board = Board.objects.get(id=request.data["board_id"])
-
         gift_card = GiftCard.objects.create(
             board=board,
             user=user,
@@ -40,8 +43,8 @@ class GiftCardView(ViewSet):
             price=request.data["price"],
             occasion=request.data["occasion"],
             gift_for=request.data["gift_for"],
-            name=request.data["name"],
-            priority=request.data["priority"]
+            name=request.data.get("name", None),
+            priority=request.data.get("priority", False)
         )
         serializer = GiftCardSerializer(gift_card)
         return Response(serializer.data)
@@ -66,7 +69,7 @@ class GiftCardView(ViewSet):
         gift_card.price = request.data["price"]
         gift_card.occasion = request.data["occasion"]
         gift_card.gift_for = request.data["gift_for"]
-        gift_card.name = request.data["name"]
+        gift_card.name=request.data.get("name", None),
         gift_card.priority = request.data["priority"]
 
         gift_card.save()

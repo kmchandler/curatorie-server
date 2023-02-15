@@ -18,6 +18,10 @@ class ListCardView(ViewSet):
         """"Handle GET requests for all list cards"""
         list_cards = ListCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            list_cards = list_cards.filter(board_id=board_id)
+
         serializer = ListCardSerializer(list_cards, many=True)
         return Response(serializer.data)
 
@@ -35,7 +39,7 @@ class ListCardView(ViewSet):
             board=board,
             user=user,
             list_item=request.data["list_item"],
-            priority=request.data["priority"]
+            priority=request.data.get("priority", False)
         )
         serializer = ListCardSerializer(list_card)
         return Response(serializer.data)

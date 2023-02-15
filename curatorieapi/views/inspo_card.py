@@ -18,6 +18,10 @@ class InspoCardView(ViewSet):
         """"Handle GET requests for all inspo cards"""
         inspo_cards = InspoCard.objects.all()
 
+        board_id = request.query_params.get('board_id', None)
+        if board_id is not None:
+            inspo_cards = inspo_cards.filter(board_id=board_id)
+
         serializer = InspoCardSerializer(inspo_cards, many=True)
         return Response(serializer.data)
 
@@ -36,7 +40,7 @@ class InspoCardView(ViewSet):
             user=user,
             image_url=request.data["image_url"],
             description=request.data["description"],
-            priority=request.data["priority"]
+            priority=request.data.get("priority", False)
         )
         serializer = InspoCardSerializer(inspo_card)
         return Response(serializer.data)

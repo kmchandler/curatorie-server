@@ -13,7 +13,7 @@ class GiftCard(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     occasion = models.CharField(max_length=50)
     gift_for = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, null=True, blank=True)
     priority = models.BooleanField(default=False)
 
     def __str__(self):

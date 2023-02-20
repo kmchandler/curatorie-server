@@ -18,6 +18,10 @@ class SharedBoardView(ViewSet):
         """Handle GET requests for all shared boards"""
         shared_boards = SharedBoard.objects.all()
 
+        user_id = request.query_params.get('user_id', None)
+        if user_id is not None:
+            shared_boards = shared_boards.filter(user_id=user_id)
+
         serializer = SharedBoardSerializer(shared_boards, many=True)
         return Response(serializer.data)
 

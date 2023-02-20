@@ -25,7 +25,6 @@ class ShareRequestView(ViewSet):
         """Handle POST operations, Returns Response -- JSON serialized share request instance"""
 
         user = User.objects.get(id=request.data["user_id"])
-
         board = Board.objects.get(id=request.data["board_id"])
 
         share_requests = ShareRequest.objects.create(

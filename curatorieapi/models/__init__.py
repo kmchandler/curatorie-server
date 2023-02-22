@@ -8,3 +8,4 @@ from .share_request import ShareRequest
 from .user import User
 from .board_type import BoardType
 from .icon import Icon
+from .type import Type

@@ -9,3 +9,4 @@ from .shared_board import SharedBoardView
 from .share_request import ShareRequestView
 from .board_type import BoardTypeView
 from .icon import IconView
+from .type import TypeView

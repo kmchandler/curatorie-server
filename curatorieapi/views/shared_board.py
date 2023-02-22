@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import SharedBoard, User, Board
+from curatorieapi.models import SharedBoard, User, Board, ShareRequest
 
 class SharedBoardView(ViewSet):
     def retrieve(self, request, pk):
@@ -18,6 +18,10 @@ class SharedBoardView(ViewSet):
         """Handle GET requests for all shared boards"""
         shared_boards = SharedBoard.objects.all()
 
+        user_id = request.query_params.get('user_id', None)
+        if user_id is not None:
+            shared_boards = shared_boards.filter(user_id=user_id)
+
         serializer = SharedBoardSerializer(shared_boards, many=True)
         return Response(serializer.data)
 
@@ -32,6 +36,11 @@ class SharedBoardView(ViewSet):
             user = user,
             board = board
         )
+        share_request = ShareRequest.objects.get(
+            user = user,
+            board = board,
+        )
+        share_request.delete()
         serializer = SharedBoardSerializer(shared_board)
         return Response(serializer.data)
 

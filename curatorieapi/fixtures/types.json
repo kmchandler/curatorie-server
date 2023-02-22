@@ -3,28 +3,28 @@
       "model": "curatorieapi.type",
       "pk": 1,
       "fields": {
-          "name": "gift_card"
+          "type": "gift card"
       }
   },
   {
       "model": "curatorieapi.type",
       "pk": 2,
       "fields": {
-          "name": "inspo_card"
+          "type": "inspo card"
       }
   },
   {
       "model": "curatorieapi.type",
       "pk": 3,
       "fields": {
-          "name": "list_card"
+          "type": "list card"
       }
   },
   {
       "model": "curatorieapi.type",
       "pk": 4,
       "fields": {
-          "name": "purchase_card"
+          "type": "purchase card"
       }
   }
 ]

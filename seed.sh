@@ -14,3 +14,4 @@ python3 manage.py loaddata purchase_cards
 python3 manage.py loaddata share_requests
 python3 manage.py loaddata shared_boards
 python3 manage.py loaddata icons
+python3 manage.py loaddata types

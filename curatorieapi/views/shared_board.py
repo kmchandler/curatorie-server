@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from curatorieapi.models import SharedBoard, User, Board
+from curatorieapi.models import SharedBoard, User, Board, ShareRequest
 
 class SharedBoardView(ViewSet):
     def retrieve(self, request, pk):
@@ -36,6 +36,11 @@ class SharedBoardView(ViewSet):
             user = user,
             board = board
         )
+        share_request = ShareRequest.objects.get(
+            user = user,
+            board = board,
+        )
+        share_request.delete()
         serializer = SharedBoardSerializer(shared_board)
         return Response(serializer.data)
 

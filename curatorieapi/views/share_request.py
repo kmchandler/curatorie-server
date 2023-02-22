@@ -17,6 +17,9 @@ class ShareRequestView(ViewSet):
     def list(self, request):
         """Handle GET requests for all share requests"""
         share_requests = ShareRequest.objects.all()
+        user_id = request.query_params.get('user_id', None)
+        if user_id is not None:
+            share_requests = share_requests.filter(user_id=user_id)
 
         serializer = ShareRequestSerializer(share_requests, many=True)
         return Response(serializer.data)

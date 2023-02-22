@@ -30,11 +30,8 @@ class BoardView(ViewSet):
         Returns
             Response -- JSON serialized board instance
         """
-        try:
-            user = User.objects.get(id=request.data["user_id"])
-        except Exception:
-            import pdb; pdb.set_trace()
-
+        user = User.objects.get(id=request.data["user_id"])
+        
         board = Board.objects.create(
             user=user,
             name=request.data["name"],

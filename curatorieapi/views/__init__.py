@@ -10,3 +10,4 @@ from .share_request import ShareRequestView
 from .board_type import BoardTypeView
 from .icon import IconView
 from .type import TypeView
+from .search_user import SearchUserView

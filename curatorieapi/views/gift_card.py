@@ -69,7 +69,7 @@ class GiftCardView(ViewSet):
         gift_card.price = request.data["price"]
         gift_card.occasion = request.data["occasion"]
         gift_card.gift_for = request.data["gift_for"]
-        gift_card.name=request.data.get("name", None),
+        gift_card.name=request.data.get("name", None)
         gift_card.priority = request.data["priority"]
 
         gift_card.save()

@@ -8,13 +8,16 @@ class SearchUserView(ViewSet):
     def list(self, request):
         """"Handle GET requests for all search users"""
         input = request.GET.get('query', None)
+        user_id = request.GET.get('user_id', None)
+
         if input is '':
             return Response({'message': 'no search provided'}, status=status.HTTP_404_NOT_FOUND)
         users = User.objects.filter(
             Q(first_name__icontains=input) |
             Q(last_name__icontains=input) |
             Q(username__icontains=input) |
-            Q(email__icontains=input)
+            Q(email__icontains=input),
+            ~Q(id=user_id)
         )
 
         serializer = SearchUserSerializer(users, many=True)

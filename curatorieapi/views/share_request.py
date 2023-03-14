@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
+from django.db import IntegrityError
 from curatorieapi.models import ShareRequest, User, Board
 
 class ShareRequestView(ViewSet):
@@ -30,12 +31,16 @@ class ShareRequestView(ViewSet):
         user = User.objects.get(id=request.data["user_id"])
         board = Board.objects.get(id=request.data["board_id"])
 
-        share_requests = ShareRequest.objects.create(
-            user = user,
-            board = board
-        )
-        serializer = ShareRequestSerializer(share_requests)
-        return Response(serializer.data)
+        try: 
+            share_requests = ShareRequest.objects.create(
+                user = user,
+                board = board
+            )
+            serializer = ShareRequestSerializer(share_requests)
+            return Response(serializer.data)
+        except IntegrityError:
+            return Response({'message': 'cannot send duplicate boards to the same user'},
+            status=status.HTTP_409_CONFLICT)
 
     def update(self, request, pk):
         """Handle PUT requests for a share request, Returns Response -- Empty body with 204 status code"""

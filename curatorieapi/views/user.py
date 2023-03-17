@@ -24,7 +24,7 @@ class UserView(ViewSet):
 
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
-
+    
     def create(self, request):
         """Handle POST operations
         Returns

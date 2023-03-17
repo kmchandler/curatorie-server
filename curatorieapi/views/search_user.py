@@ -10,7 +10,7 @@ class SearchUserView(ViewSet):
         input = request.GET.get('query', None)
         user_id = request.GET.get('user_id', None)
 
-        if input is '':
+        if input == '':
             return Response({'message': 'no search provided'}, status=status.HTTP_404_NOT_FOUND)
         users = User.objects.filter(
             Q(first_name__icontains=input) |

@@ -6,6 +6,9 @@ import firebase_admin.auth as auth
 
 class FirebaseAuthentication(authentication.TokenAuthentication):
     def authenticate(self, request):
+        if request.path == '/users' and request.method == 'POST':
+            return None
+
         header = request.headers.get('Authorization', None)
         
         if not header:

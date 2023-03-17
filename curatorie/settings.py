@@ -32,7 +32,9 @@ SECRET_KEY = 'django-insecure-cdjukpl859yx^)l19p&pl3wu1cx69jhx_6*vo1(li77@m5)6b@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'goldfish-app-6yzpl.ondigitalocean.app'
+]
 
 
 # Application definition

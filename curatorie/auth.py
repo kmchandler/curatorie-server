@@ -6,11 +6,12 @@ import firebase_admin.auth as auth
 
 class FirebaseAuthentication(authentication.TokenAuthentication):
     def authenticate(self, request):
-        header = request.headers.get('Authorization')
+        header = request.headers.get('Authorization', None)
+        
+        if not header:
+            return None
 
         if not header.startswith('Bearer '):
-            return None
-        if not header:
             return None
         
         bearer, _, token = header.partition(' ')

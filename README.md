@@ -98,3 +98,4 @@ https://github.com/kmchandler
 <img src="styles/curatorie_ERD.png" alt="ERD" title="ERD">
         
 ## Video Walkthrough
+https://www.loom.com/share/27704246c70141059dc7ac9458feae77

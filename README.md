@@ -9,7 +9,7 @@
 - [ERDs](#ERDs)
 - [Video Walkthrough](#video-walkthrough)
 
-<img src="styles/curatorie_screenshot.png" alt="curatorie" title="curatorie">
+<img src="curatorie_screenshot.png" alt="curatorie" title="curatorie">
 
 ## Primary Features
 The primary features of this product are:
@@ -95,7 +95,7 @@ https://github.com/kmchandler
 [Link to curatorie wireframe](https://whimsical.com/curatorie-5YYsV6WVUYTPYrDfs7u1Zu)
 
 ## ERD
-<img src="styles/curatorie_ERD.png" alt="ERD" title="ERD">
+<img src="curatorie_ERD.png" alt="ERD" title="ERD">
         
 ## Video Walkthrough
 https://www.loom.com/share/27704246c70141059dc7ac9458feae77

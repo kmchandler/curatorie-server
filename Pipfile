@@ -11,6 +11,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 pylint-django = "*"
 firebase-admin = "*"
+mysqlclient = "*"
 
 [dev-packages]
 

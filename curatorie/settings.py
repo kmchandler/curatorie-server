@@ -101,10 +101,21 @@ WSGI_APPLICATION = 'curatorie.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line 
+        'NAME'    : 'curatoriedb',                 # <-- UPDATED line 
+        'USER'    : 'curatorie',                     # <-- UPDATED line
+        'PASSWORD': 'AVNS_7b4KOY9QN69aT_T2rCD',              # <-- UPDATED line
+        'HOST'    : 'db-mysql-curatorie-do-user-13772770-0.b.db.ondigitalocean.com',                # <-- UPDATED line
+        'PORT'    : '25060',
     }
 }
 
